@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>java script </h1>
+    <script>
+
+        //RANdome Password
+   let Arr = ["A", "B", "C", "D", "E", "F", "I", "J", 1, 2, 3, 4, 5, 6, 7, 8, 9];
+let NewArr = [];
+
+for (let i = 0; i < 15; i++) { 
+    let pass = Math.random() * Arr.length; 
+    let numFloor = Math.floor(pass);  
+    NewArr.push(Arr[numFloor]);  // Corrected case sensitivity issue
+}
+
+console.log(NewArr.join(""));
+
+
+//string to array and reverse check palindromme  //
+let word = prompt("Enter a word:"); // Get user input
+
+if (!word) {
+    console.log("No input provided.");
+    alert("Please enter a valid word.");
+} else {
+    word = word.toLowerCase(); // Convert to lowercase to make it case-insensitive
+    let wordArray = word.split(""); // Convert string to array
+    let reversedArray = [...wordArray].reverse(); // Copy and reverse the array
+    
+    console.log("Original:", wordArray.join(""), "Reversed:", reversedArray.join(""));
+
+    if (wordArray.join("") === reversedArray.join("")) {
+        alert("Palindrome");
+    } else {
+        alert("It's not a palindrome");
+    }
+}
+
+//palaindrome cheker count the sentence word//
+let input = prompt("Enter a sentence:"); // Get user input
+
+if (!input || input.trim() === "") {
+    alert("Please enter a valid sentence.");
+} else {
+    let wordsArray = input.trim().split(/\s+/); // Convert string to array by splitting at spaces
+    let wordCount = wordsArray.length; // Count the words
+    alert("Number of words: " + wordCount);
+}
+
+
+
+    </script>
+</body>
+
+</html>
